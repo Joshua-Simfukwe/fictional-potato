@@ -1,38 +1,9 @@
-import { useState } from 'react';
-import './App.css';
+import React from 'react'
 
 const App = () => {
-  const [counter, setCounter] = useState(0)
-  
-  const increment = () => {
     return (
-      setCounter(
-        (prevCount) => {
-          return prevCount + 1;
-        }
-      )
+        <div>App</div>
     )
-  }
-
-  const decrement = () => {
-    return(
-      setCounter(
-        (prevCount) => {
-          return (
-            prevCount - 1
-          )
-        }
-      )
-    )
-  }
-
-  return (
-    <div className="App">
-      <button onClick={increment} >+</button>
-      <h1>{counter}</h1>
-      <button onClick={decrement} >-</button>
-    </div>
-  );
 }
 
 export default App;
