@@ -1,27 +1,36 @@
+import { useState } from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [counter, setCounter] = useState(0)
+  
+  const increment = () => {
+    return (
+      setCounter(
+        (prevCount) => {
+          return prevCount + 1;
+        }
+      )
+    )
+  }
+
+  const decrement = () => {
+    return(
+      setCounter(
+        (prevCount) => {
+          return (
+            prevCount - 1
+          )
+        }
+      )
+    )
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+      <button onClick={increment} >+</button>
+      <h1>{counter}</h1>
+      <button onClick={decrement} >-</button>
     </div>
   );
 }
